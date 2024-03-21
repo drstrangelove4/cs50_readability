@@ -7,9 +7,7 @@ float calculate_index(int characters, int words, int sentence);
 float coleman_liau_index(string input);
 void reading_level(float index);
 
-
 // ----------------------------------------------------------------------------------------------------------------------
-
 
 int main()
 {
@@ -20,13 +18,11 @@ int main()
     reading_level(number);
 }
 
-
 // ----------------------------------------------------------------------------------------------------------------------
 
-
 float coleman_liau_index(string input)
-// Takes a string and sums the total chars, words and sentences found. 
-//Calls the function to calcuate the index value.
+// Takes a string and sums the total chars, words and sentences found.
+// Calls the function to calcuate the index value.
 {
     int total_characters = 0;
     int total_words = 0;
@@ -72,9 +68,7 @@ float coleman_liau_index(string input)
     return calculate_index(total_characters, total_words, total_sentences);
 }
 
-
 // ----------------------------------------------------------------------------------------------------------------------
-
 
 float calculate_index(int characters, int words, int sentence)
 // Takes the character, word and sentence counts and returns the reading level as a float.
@@ -95,9 +89,7 @@ float calculate_index(int characters, int words, int sentence)
     return VALUE_1 * l_value - VALUE_2 * s_value - VALUE_3;
 }
 
-
 // ----------------------------------------------------------------------------------------------------------------------
-
 
 void reading_level(float index)
 // Prints the result to the user
