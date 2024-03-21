@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 float calculate_index(int characters, int words, int sentence);
 float coleman_liau_index(string input);
@@ -49,16 +49,19 @@ float coleman_liau_index(string input)
             total_words++;
             total_sentences++;
         }
-        // Increase character count ignoring white space and characters we haven't already account for.
+        // Increase character count ignoring white space and characters we haven't already account
+        // for.
         else if (input[i] != '\n' && input[i] != '\t' && input[i] != '\'' && input[i] != ',')
         {
             total_characters++;
         }
-        // Record the current character so we can check against the logic on the next iteration of the loop.
+        // Record the current character so we can check against the logic on the next iteration of
+        // the loop.
         previous_character = input[i];
     }
 
-    // Check for non fullstop terminated sentences at the end of the input. Treat that as a sentence.
+    // Check for non fullstop terminated sentences at the end of the input. Treat that as a
+    // sentence.
     if (previous_character != '.' && previous_character != '?' && previous_character != '!')
     {
         total_words++;
